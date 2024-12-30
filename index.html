@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Fogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Configuração -->
+    <div id="configuracao" class="screen">
+        <div class="container">
+            <h1>Gerenciamento de Fogos</h1>
+
+            <div>
+                <h2>Cadastro</h2>
+                <label for="nome">Nome da Bateria:</label>
+                <input type="text" id="nome" placeholder="Nome">
+                <label for="canal">Canal:</label>
+                <input type="number" id="canal" placeholder="Canal">
+                <label for="tempo">Tempo (segundos):</label>
+                <input type="number" id="tempo" placeholder="Tempo">
+                <button class="button" id="adicionar">Adicionar</button>
+            </div>
+
+            <div class="list">
+                <h2>Baterias Cadastradas</h2>
+                <ul id="lista-baterias"></ul>
+                <button class="button" id="salvar-projeto">Salvar Projeto</button>
+                <button class="button" id="carregar-projeto">Carregar Projeto</button>
+            </div>
+
+            <div>
+                <h2>Configuração</h2>
+                <label for="tempo-inicial">Contagem inicial (segundos):</label>
+                <input type="number" id="tempo-inicial" placeholder="Tempo inicial">
+                <button class="button" id="iniciar-show">Iniciar Show</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Execução -->
+    <div id="execucao" class="screen hidden">
+        <div class="header">
+            <h2 id="proxima-bateria" class="highlight">Próxima Bateria: ---</h2>
+        </div>
+        <div class="container fullscreen">
+            <div class="execucao-item">
+                <h3>Horário Atual:</h3>
+                <p id="horario"></p>
+            </div>
+            <div class="execucao-item">
+                <h3>Tempo Decorrido:</h3>
+                <p id="tempo-decorrido">0s</p>
+            </div>
+            <div class="execucao-item">
+                <h3 id="info-delay">Contagem Regressiva do Delay:</h3>
+                <p id="contagem-delay">---</p>
+            </div>
+        </div>
+        <div class="log">
+            <h2>Log de Acionamentos</h2>
+            <ul id="log-acionamentos"></ul>
+        </div>
+        <button class="button" id="voltar-configuracao">Voltar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
